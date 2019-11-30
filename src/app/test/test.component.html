@@ -1,0 +1,36 @@
+<p>test components!</p>
+
+<ag-grid-angular
+style="width: 610px; height: 500px;"
+class="ag-theme-balham"
+[rowData]="rowData"
+[columnDefs]="columnDefs">
+</ag-grid-angular>
+
+<div>
+  <label>id:</label>
+  <input type="text" placeholder="input id" [(ngModel)]="id">
+</div>
+<div>
+  <label>name:</label>
+  <input type="text" placeholder="input name" [(ngModel)]="name">
+</div>
+<div>
+  <label>cardName:</label>
+  <input type="text" placeholder="input cardNumber" [(ngModel)]="cardNumber">
+</div>
+<div>
+  <label>cardType:</label>
+  <input type="text" placeholder="input cardType" [(ngModel)]="cardType">
+</div>
+<div>
+  <button (click)="addUser()">Add User</button>
+</div>
+
+<div>Table User Store:</div>
+<table>
+  <tr *ngFor="let user of ($user | async).users">
+    <td> {{user.id}} </td>
+    <td> {{user.name}} </td>
+  </tr>
+</table>
