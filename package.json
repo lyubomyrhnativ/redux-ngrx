@@ -1,6 +1,6 @@
 {
-  "name": "ngrx-redux",
-  "version": "0.0.0",
+  "name": "ngrx-redux-repo",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
