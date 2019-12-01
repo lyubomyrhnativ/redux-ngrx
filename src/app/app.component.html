@@ -1,8 +1,29 @@
-<h2>NGRX project Angular 8</h2>
-<div> {{ title }} </div>
-<div class="users">
-  <div *ngFor="let user of users$ | async">
-    {{user.name}}
+<div class="container">
+  <h2> {{title}} project Angular 8</h2>
+
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" name="name">
+    </div>
+    <div class="form-group">
+      <label>CardNumber</label>
+      <input type="text" class="form-control" placeholder="CardNumber" [(ngModel)]="cardNumber" name="cardNumber">
+    </div>
+    <div class="form-group">
+      <label>CardType</label>
+      <input type="text" class="form-control" placeholder="CardType" [(ngModel)]="cardType" name="cardType">
+    </div>
+    <button class="btn btn-primary" (click)="addUser()">Add User</button>
+  </form>
+
+  <div class="users">
+    <div *ngFor="let user of users$ | async">
+      {{user.name}}
+    </div>
   </div>
+  <app-test></app-test>
 </div>
-<app-test></app-test>
+
+
+
