@@ -22,6 +22,13 @@ export const userReducer = (state = initialUserState, action: UserActions): IUse
         users: [...state.users, action.payload]
       };
     }
+    case EUserActions.DeleteUser: {
+      const index = state.users.indexOf(action.payload);
+      state.users.splice(index, 1);
+      return {
+        ...state,
+      };
+    }
     default:
       return state;
   }

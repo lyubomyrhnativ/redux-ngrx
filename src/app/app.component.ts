@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { IAppState } from './store/state/app.state';
 import { IUser } from './models/user.interface';
-import { AddUser } from './store/actions/user.actions';
+import { AddUser, DeleteUser } from './store/actions/user.actions';
 
 @Component({
   selector: 'app-root',
@@ -49,6 +49,10 @@ export class AppComponent implements OnInit {
     this.name = '';
     this.cardType = '';
     this.cardNumber = '';
+  }
+
+  deleteUser(user) {
+    this.store.dispatch(new DeleteUser(user));
   }
 
 

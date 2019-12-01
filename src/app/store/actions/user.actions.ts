@@ -6,7 +6,8 @@ export enum EUserActions {
   GetUsersSuccess = '[User] GetUsersSuccess',
   GetUser = '[User] GetUser',
   GetUserSuccess = '[User] GetUserSuccess',
-  AddUser = '[User] AddUser'
+  AddUser = '[User] AddUser',
+  DeleteUser = '[User] DeleteUser'
 }
 
 export class GetUsers implements Action {
@@ -33,5 +34,10 @@ export class AddUser implements Action {
   constructor(public payload: IUser) {}
 }
 
+export class DeleteUser implements Action {
+  public readonly type = EUserActions.DeleteUser;
+  constructor(public payload: IUser) {}
+}
+
 export type UserActions = GetUser |
-  GetUsers | GetUsersSuccess | GetUserSuccess | AddUser;
+  GetUsers | GetUsersSuccess | GetUserSuccess | AddUser | DeleteUser;
